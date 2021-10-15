@@ -23,9 +23,9 @@ app.use("/api", require("./routes/routes"));
 
 //Configuración en producción
 if(process.env.NODE_ENV === "production"){
-    app.use(express.static(__dirname+"/dist"));
+    app.use(express.static(__dirname+"/site"));
     app.use("*", (req, res)=>{
-        res.sendFile(__dirname+"/dist/index.html");
+        res.sendFile(__dirname+"/site/index.html");
     })
 }
 //iniciar servidor 
